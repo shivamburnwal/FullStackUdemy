@@ -1,0 +1,86 @@
+body {
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    height: 1000px;
+    padding-left: 0;
+}
+
+p {
+    padding: 0px 100px 0px 40px;
+    font-family: 'Tektur', cursive;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.header {
+    background-color: #f5f5f5;
+    border: 2px solid blue;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: 15px;
+    margin: auto 0px;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    border: 5px solid red;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    box-sizing: border-box;
+    margin: 10px;
+    display: inline-block;
+    z-index: -1;
+    overflow: auto;
+}
+
+.box2 {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 5px solid blue;
+    top: 0;
+    right: 0;
+}
+
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+.button {
+    text-decoration: none;
+    padding: 10px;
+    background-color: black;
+    color: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.2);
+    background-color: green;
+    color: white;
+    margin: 0px auto;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

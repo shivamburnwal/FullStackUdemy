@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #layout {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #nav {
+            flex-basis: 100%;
+            border-bottom: 2px solid #aaa;
+            padding: 20px;
+        }
+
+        #sidebar {
+            flex-basis: 20%;
+            padding: 20px;
+            border-right: 2px solid #aaa;
+            border-bottom: 2px solid #aaa;
+        }
+
+        #content {
+            flex-basis: 80%;
+            padding: 20px;
+            border-bottom: 2px solid #aaa;
+        }
+
+        @media (max-width: 640px) {
+            #sidebar, #content {
+                flex-basis: 100%;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="nav">
+            Navigation in here.
+        </div>
+        <div id="sidebar">
+            Sidebar
+        </div>
+        <div id="content">
+            Content
+        </div>
+    </div>
+</body>
+</html>

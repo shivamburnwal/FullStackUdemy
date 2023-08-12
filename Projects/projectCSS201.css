@@ -1,0 +1,493 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    background: #222;
+    font-family: "Open Sans", sans-serif, Helvetica, arial, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #888;
+    text-align: left;
+    margin: 0;
+    min-width: 87.5rem;
+    width: 100%;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    width: inherit;
+    z-index: 20;
+    background-color: rgba(34, 34, 34, 0.7);
+}
+
+a {
+    color: #7289da;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a,
+a:hover,
+a:active {
+    outline: 0;
+    color: #4d5b8f;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    background-image: url("https://seraymeric.com/static/img/ishgard_splash.jpg");
+    background-size: 100%;
+    z-index: 0;
+    min-height: 43.75rem;
+}
+
+header::after {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4),
+            rgba(34, 34, 34, 1));
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+h1,
+h3 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.125rem;
+    color: #222;
+    font-weight: 400;
+    letter-spacing: -0.063rem;
+    margin: 0 0 0.938rem 0;
+    text-align: center;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h5 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+header h1 {
+    font-size: 3.125rem;
+    font-weight: 400;
+    letter-spacing: -0.063rem;
+    margin: 0 0 1.375rem 0;
+    color: #fff;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+p {
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    text-align: inherit;
+}
+
+.navitemtext {
+    float: left;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.navitemtext>a {
+    text-align: center;
+    display: block;
+    line-height: 3.125rem;
+    transition: background-color 0.2s ease;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.navitemtext>div {
+    display: none;
+    overflow: visible;
+    background-color: white;
+    min-width: 900%;
+    position: absolute;
+    box-shadow: 0 0.625rem 1.25rem rgb(0 0 0 / 19%),
+        0 0.375rem 0.375rem rgb(0 0 0 / 23%);
+    padding: 0.625rem;
+    z-index: 997;
+    left: -400%;
+    border-radius: 0 0 0.313rem 0.313rem;
+    background-color: #333;
+}
+
+.navitemtext:hover>div {
+    display: block;
+}
+
+.navcontainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navcontainer>a {
+    padding: 0.5rem 0.625rem;
+    flex-basis: 46%;
+    margin: 2%;
+    background-color: #7289da;
+    color: #fff;
+    border-radius: 0.125rem;
+    transition: background-color 0.2s ease;
+}
+
+.caret {
+    position: relative;
+}
+
+.caret::before {
+    content: "";
+    position: absolute;
+    top: -1.25rem;
+    left: 50%;
+    margin-left: -1.25rem;
+    border-bottom: 1.25rem solid #333;
+    border-left: 1.25rem solid transparent;
+    border-right: 1.25rem solid transparent;
+}
+
+.caret::after {
+    content: "";
+    position: absolute;
+    top: -1.25rem;
+    left: 50%;
+    margin-left: -1.188rem;
+    border-bottom: 1.188rem solid #333;
+    border-left: 1.188rem solid transparent;
+    border-right: 1.188rem solid transparent;
+}
+
+.main-logo {
+    width: 43.75rem;
+    margin-top: -8.125rem;
+}
+
+.header-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 4.688rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.huger-font {
+    font-size: 5.625rem;
+    margin-bottom: 0;
+}
+
+.sub1 {
+    font-weight: 900;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.medium-font {
+    font-size: 1.25rem;
+    color: #eee;
+    font-weight: 100;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.splashbottom {
+    position: absolute;
+    bottom: -4.375rem;
+}
+
+.main-section {
+    padding: 5.625rem 0 6.875rem;
+}
+
+.bg-darkish {
+    background-color: #292d32;
+}
+
+.posbottom {
+    position: relative;
+    bottom: -0.313rem;
+}
+
+.dark-background {
+    background-color: #222;
+}
+
+.container {
+    width: 100%;
+    max-width: 77.5rem;
+    padding-right: 0.938rem;
+    padding-left: 0.938rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.larger-font {
+    font-size: 3.125rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0.063rem solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.bg-dark {
+    background-color: #343a40;
+    min-height: 15.625rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+.postop {
+    position: relative;
+    top: -0.313rem;
+    transform: rotate(180deg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.halo {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 75rem;
+    height: 50rem;
+    margin-top: -25rem;
+    margin-left: -37.5rem;
+    opacity: 0.4;
+}
+
+.butterfly {
+    width: 3.125rem;
+    display: block;
+    margin: auto;
+}
+
+.bg-info {
+    background-color: #17a2b8;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.triangly-background {
+    background: url("https://seraymeric.com/static/img/triangly-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smaller {
+    font-size: 70%;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    gap: 2rem;
+}
+
+.foot-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.938rem;
+    margin-left: -0.938rem;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7 {
+    position: relative;
+    width: 100%;
+    min-height: 0.063rem;
+    padding-right: 0.938rem;
+    padding-left: 0.938rem;
+}
+
+.col-1 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-2 {
+    flex: 0 0 33%;
+    max-width: 33%;
+}
+
+.col-3 {
+    flex: 0 0 41%;
+    max-width: 41%;
+}
+
+.col-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-5 {
+    flex: 0 0 58%;
+    max-width: 58%;
+}
+
+.col-6 {
+    flex: 0 0 91%;
+    max-width: 91%;
+}
+
+.col-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.mx {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mt,
+.my-2 {
+    margin-top: 3rem;
+}
+
+.my-2 {
+    margin-bottom: 3rem;
+}
+
+.mb {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.pt-1,
+.py-1 {
+    padding-top: 0;
+}
+
+.py-1 {
+    padding-bottom: 0;
+}
+
+.px-1 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.pt-2,
+.py-2 {
+    padding-top: 3rem;
+}
+
+.px-2 {
+    padding-right: 3rem;
+}
+
+.pl,
+.px-2 {
+    padding-left: 3rem;
+}
+
+.pb,
+.py-2 {
+    padding-bottom: 3rem;
+}
+
+.blurple {
+    color: #7289da;
+}
+
+.green {
+    color: #28a745;
+}
+
+.gold {
+    color: #ff9700;
+}
+
+.lightblurple {
+    color: #9aabe5;
+}
+
+.white {
+    color: #fff;
+}

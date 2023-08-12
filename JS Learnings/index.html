@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Learnings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        #timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        #box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main-class {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .this-class {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.1) ;
+            transition: transform 0.5s ease;
+        }
+
+        .this-class:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer">00:00:00</div>
+    <div id="box">
+        This is a box
+        <div>I'm Element Node 1</div>
+        <div>I'm Element Node 2</div>
+    </div>
+
+    <div class="main-class">
+        <div class="this-class" name="a">Class 1</div>
+        <div class="this-class" name="b">Class 2</div>
+        <div class="this-class" name="c">Class 3</div>
+        <div class="this-class" name="d" draggable="true">Class 4</div>    
+    </div>
+    
+    <script src="index.js"></script>
+    <script src="countdown.js"></script>
+</body>
+
+</html>
