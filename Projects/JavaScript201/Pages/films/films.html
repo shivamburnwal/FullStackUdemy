@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Films</title>
+    <link rel="stylesheet" href="films.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="main-title">Film Details</h1>
+    </header>
+
+    <main class="main-content">
+        <div id="display">
+            <div class="flex-container">
+                <div class="data-card">
+                    <h2 id="title" class="data-title" style="height: 36px;"></h2>
+                    <p id="opening-crawl" class="opening-crawl"></p>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Director:</strong>
+                        <span id="director"></span>
+                    </p>
+                </div>
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Producer:</strong>
+                        <span id="producer"></span>
+                    </p>
+                </div>
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Released Date:</strong>
+                        <span id="releaseDate"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Total Characters:</strong>
+                        <span id="characters"></span>
+                    </p>
+                </div>
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Total Starships:</strong>
+                        <span id="starShips"></span>
+                    </p>
+                </div>
+                <div class="data-card attribute">
+                    <p>
+                        <strong class="label">Total Planets:</strong>
+                        <span id="planets"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="button">
+            <button id="search">Search</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Star Wars Universe</p>
+    </footer>
+
+    <script src="films.js"></script>
+</body>
+</html>
