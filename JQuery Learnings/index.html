@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Learnings</title>
+
+    <style>
+        body{
+            margin: 20px;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 30px;
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0px 25px;
+        }
+
+        #box {
+            display: flex;
+            height: 200px;
+            width: 200px;
+            margin-top: 0;
+            border-radius: 10%;
+            border: solid 2px black;
+            background-color: cornflowerblue;
+        }
+
+        #box1,
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            border: 2px solid blue;
+            border-radius: 10%;
+        }
+
+        #btn1,
+        #btn2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="customId" class="customClass">Hello from JQuery</h1>
+    
+    <div class="container">
+        <div class="col">
+            <button id="btn1">Toggle Fade</button>
+            <div id="box1"></div>
+        </div>
+
+        <div class="col">
+            <input type="text" name="input" id="input">
+        </div>
+        
+        <div class="col">
+            <div id="counter" class="counter">
+                <b>0</b>
+            </div>
+            <button id="btn">Click Me</button>            
+        </div>
+        
+        <div class="col">
+            <div id="box"></div>
+        </div>
+    </div>
+
+    <div class="container" style="justify-content: flex-start;">
+        <div class="col">
+            <div id="box2" style="background-color: aqua;"></div>
+            <button id="btn2">Animate Box</button>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        // jquery syntax
+        // $(selector).event(function() { do something!! });
+        $(document).ready(() => {
+            //#region Event Listeners
+            // const btn = $("#btn");
+
+            // btn.click(() => {
+            //     console.log("I am clicked.");
+            // });
+
+            // btn.on('click', () => {
+            //     console.log("I am clicked #2");
+            // });
+
+            // This method works even when button is added after adding event listener.
+            // $(document).on('click', '#btn', () => {
+            //     console.log("I am clicked #3");
+            // });
+            //#endregion
+            //#region Hover Events
+            // $("#box")
+            //     .on("mouseenter", () => {
+            //         console.log("You are hovering over the box.")
+            //     })
+            //     .on("mouseleave", () => {
+            //         console.log("You left the box!.")
+            //     })
+            //#endregion
+            //#region Counter
+            let counter = 0;
+            const ele = $("#counter");
+            $("#btn").on("click", () => {
+                console.log("inside jquery counter")
+                counter += 1;
+                ele.html(`<b>${counter}</b>`);
+            });
+            //#endregion
+            //#region Key Events
+            // $("#input").on("keyup", function() {
+            //     console.log($(this).val());
+            // });
+
+            // $("[type='text'][name='input']").on("keyup", function() {
+            //     console.log($(this).val());
+            // })
+            //#endregion
+            //#region Focus Event
+            $("[type='text'][name='input']").on("focus", function() {
+                console.log("You focused on input");
+            })
+            //#endregion
+            //#region Blur Events
+            $("#input").on("blur", function() {
+                console.log("You blurred from input");
+                const val = $(this).val();
+                if (val != ""){
+                    console.log(val);
+                }
+            })
+            //#endregion
+            //#region Toggle Fade, Display and Slide.
+            $("#btn1").on("click", () => {
+                $("#box1").fadeToggle("2000");
+                // $("#box1").toggle("2000");
+                // $("#box1").slideToggle("2000");
+            })
+            //#endregion
+            //#region Create Animation
+            $("#btn2").on("click", function() {
+                $("#box2").animate({
+                    width: "50vw",
+                }, 3000);
+            })
+            //#endregion
+        });
+
+        // javascript
+        window.onload = () => {
+            //#region Counter
+            // let counter = 0;
+
+            // const btn = document.getElementById("btn");
+            // const ele = document.getElementById("counter");
+
+            // btn.addEventListener("click", () => {
+            //     counter += 1;
+            //     ele.innerText = counter;
+            // })
+            //#endregion
+        }
+    </script>
+</body>
+
+</html>
