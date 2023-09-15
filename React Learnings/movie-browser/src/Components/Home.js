@@ -1,8 +1,8 @@
+import Hero from "./Hero";
+
 const Home = () => {
     return(
-        <>
-            <h1>Welcome to Home Page</h1>
-        </>
+        <Hero text={"Welcome to React 201"}/>
     )
 }
 
