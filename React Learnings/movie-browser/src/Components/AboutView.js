@@ -1,9 +1,7 @@
-import Hero from './Hero';
+import Hero from "./Hero";
 
 const AboutView = () => {
-    return(
-        <Hero text={"About Us"} />
-    )
-}
+  return <Hero text={"About Us"} />;
+};
 
 export default AboutView;
