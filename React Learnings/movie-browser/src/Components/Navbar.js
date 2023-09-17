@@ -1,12 +1,45 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import SearchMoviesApi from "./Api";
+import React, { useEffect } from "react";
 
-const Navbar = ({ searchText, setSearchText }) => {
+/**
+ * @param {Object} props
+ * @param {string} props.searchText
+ * @param {function} props.setSearchText
+ * @param {function} props.setSearchResults
+ * @returns {React.ReactNode}
+ */
+const Navbar = ({ searchText, setSearchText, setSearchResults }) => {
+  const navigate = useNavigate();
 
+  /**
+   * @param {React.KeyboardEvent<HTMLInputElement>} e
+   */
   const updateSearchText = (e) => {
-    const text = e.target.value;
-    setSearchText(text);
-    console.log(text);
+    navigate("/search");
+    setSearchText(e.target.value);
   };
+
+  /**
+   * @param {React.KeyboardEvent<HTMLInputElement>} e
+   */
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
+  useEffect(() => {
+    if (searchText.trim() !== "") {
+      SearchMoviesApi(searchText)
+        .then((data) => {
+          setSearchResults(() => data.results);
+        })
+        .catch((error) => {
+          console.error("Fetch error:", error);
+        });
+    }
+  }, [searchText, setSearchResults]);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -51,6 +84,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               aria-label="Search"
               value={searchText}
               onChange={updateSearchText}
+              onKeyDown={handleKeyDown}
             />
             <button className="btn btn-outline-success" type="submit">
               Search

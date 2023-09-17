@@ -1,10 +1,11 @@
 import "./App.css";
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import AboutView from "./Components/AboutView";
 import SearchView from "./Components/SearchView";
-import { Routes, Route } from "react-router-dom";
+import MovieView from "./Components/MovieView";
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -12,7 +13,12 @@ function App() {
 
   return (
     <div>
-      <Navbar searchText={searchText} setSearchText={setSearchText} />
+      <Navbar
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+      />
       <Routes>
         <Route exact path="/" Component={Home} />
         <Route path="/about" Component={AboutView} />
@@ -22,6 +28,7 @@ function App() {
             <SearchView searchText={searchText} searchResults={searchResults} />
           }
         />
+        <Route path="/movies/:id" Component={MovieView} />
       </Routes>
     </div>
   );
