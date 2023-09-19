@@ -73,9 +73,13 @@ const SearchView = ({ searchText, searchResults }) => {
   return (
     <>
       <Hero text={title} />
-      {searchResults.length > 0 && (
+      {searchResults.length > 0 ? (
         <div className="container">
           <div className="row">{results}</div>
+        </div>
+      ) : (
+        <div className="container-no-results">
+          <div>No Results Found</div>
         </div>
       )}
     </>

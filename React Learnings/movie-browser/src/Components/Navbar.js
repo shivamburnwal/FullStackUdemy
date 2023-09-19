@@ -29,6 +29,13 @@ const Navbar = ({ searchText, setSearchText, setSearchResults }) => {
     }
   };
 
+  /**
+   * @param {React.KeyboardEvent<HTMLInputElement>} e
+   */
+  const handleSearchClick = (e) => {
+    e.preventDefault()
+  };
+
   useEffect(() => {
     if (searchText.trim() !== "") {
       SearchMoviesApi(searchText)
@@ -38,6 +45,8 @@ const Navbar = ({ searchText, setSearchText, setSearchResults }) => {
         .catch((error) => {
           console.error("Fetch error:", error);
         });
+    } else {
+      setSearchResults(() => []);
     }
   }, [searchText, setSearchResults]);
 
@@ -72,7 +81,7 @@ const Navbar = ({ searchText, setSearchText, setSearchResults }) => {
             </li>
             <li className="nav-item">
               <Link className="nav-link disabled" to="/" aria-disabled="true">
-                Disabled
+                Coming Soon
               </Link>
             </li>
           </ul>
@@ -86,7 +95,11 @@ const Navbar = ({ searchText, setSearchText, setSearchResults }) => {
               onChange={updateSearchText}
               onKeyDown={handleKeyDown}
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button
+              className="btn btn-outline-success"
+              type="submit"
+              onClick={handleSearchClick}
+            >
               Search
             </button>
           </form>
