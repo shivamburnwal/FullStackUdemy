@@ -1,0 +1,12 @@
+Install pip globally
+> py -m ensurepip --default-pip
+> py -m pip install --upgrade pip
+
+Create virtual environment using pipenv
+> pip install pipenv
+>>>> (Issue) pipenv install pythonfinder (helps to create venv with python version not installed globally.)
+>>>> (Issue) pipenv --python <version> (create env with this python version.)
+> pipenv install <package_name>
+> pipenv shell (activate venv.)
+> exit (deactivate venv)
+> pipenv --rm (delete venv)
