@@ -4,9 +4,19 @@ Install pip globally
 
 Create virtual environment using pipenv
 > pip install pipenv
->>>> (Issue) pipenv install pythonfinder (helps to create venv with python version not installed globally.)
->>>> (Issue) pipenv --python <version> (create env with this python version.)
+>>>> (Issue) pipenv install pythonfinder (helps to create venv with python version not installed globally)
+>>>> (Issue) pipenv --python <version> (create env with this python version)
 > pipenv install <package_name>
-> pipenv shell (activate venv.)
+> pipenv shell (activate venv)
 > exit (deactivate venv)
 > pipenv --rm (delete venv)
+
+Create first webapp in django and setup admin
+> django-admin startproject <name> .
+> py manage.py createsuperuser (creating admin user for first time)
+> py manage.py runserver (run the project on localhost)
+
+Create app inside project
+> py manage.py startapp <name>
+> py manage.py makemigrations (create migration file for migrating model changes)
+> py manage.py migrate (migrate changes to db.sqlite3 in django)
