@@ -1,10 +1,11 @@
 from django.urls import path
 
 # views
-from .views import HomeViewTemplate
+from .views import HomeView, ErrorView
 
 app_name = "feed"
 
 urlpatterns = [
-    path('', HomeViewTemplate.as_view(), name="index"),
+    path('', HomeView.as_view(), name="index"),
+    path('error/', ErrorView, name="errorPage")
 ]

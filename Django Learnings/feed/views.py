@@ -1,6 +1,9 @@
-# from django.shortcuts import render
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
 
 # Create your views here.
-class HomeViewTemplate(TemplateView):
+class HomeView(TemplateView):
     template_name = "home.html"
+
+def ErrorView(request):
+    return render(request, 'error.html')
