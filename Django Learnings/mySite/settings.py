@@ -16,10 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-p9cv0$dcpe(2z*+u_77c7*4!j#934+u@n-xp#zix05&*(e8a7e'
 
@@ -28,9 +24,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Media files is stored in here
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'sorl.thumbnail',
     'feed'
 ]
 
@@ -55,7 +54,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'mySite.urls'
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mySite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -84,7 +81,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
