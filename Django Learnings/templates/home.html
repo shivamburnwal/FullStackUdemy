@@ -1,21 +1,34 @@
 {% extends "base.html" %}
 {% load thumbnail %}
+{% load static %}
 
 {% block title %}Home Page{% endblock %}
 
 {% block body %}
-    <div style="display:flex; align-items:center; justify-content:center; width=100vh;">
-        <a href="{% url 'feed:addPost' %}" style="align-items:center; font-size:30px">Add post &rarr;</a>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-sm-6 col-md-3">
+                <div class="card my-4">
+                    {% if post.image %}
+                        {% thumbnail post.image "200x200" crop="center" as im %}
+                            <img src="{{ im.url }}" class="card-img-top" alt="...">
+                        {% endthumbnail %}
+                    {% else %}
+                        <img src="{% static 'images/default.png' %}" class="card-img-top" alt="...">
+                    {% endif %}
+                    
+                    <div class="card-body">
+                        <p class="card-text">{{ post.text }}</p>
+                        <a href="{% url 'feed:detail' post.id %}" class="btn btn-primary">View Full Image</a>
+                    </div>
+                </div>                
+            </div>
+        {% empty %}
+            <div class="col-sm-6 offset-3 text-center py-5 my-5">
+                <h3>Welcome!</h3>
+                <p>Add your first image?</p>
+                <a href="{% url 'feed:addPost' %}" class="btn btn-lg btn-success">Upload Image</a>
+            </div>
+        {% endfor %}
     </div>
-    <hr>
-    {% for post in posts %}
-        <br>
-        {{ post.text }}
-            {% thumbnail post.image "200x200" crop="center" as im %}
-            <a href="{% url 'feed:detail' post.id %}">
-                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-            </a>
-            {% endthumbnail %}
-        <hr>
-    {% endfor %}
 {% endblock %}
