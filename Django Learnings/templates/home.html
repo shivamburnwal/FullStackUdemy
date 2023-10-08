@@ -4,6 +4,10 @@
 {% block title %}Home Page{% endblock %}
 
 {% block body %}
+    <div style="display:flex; align-items:center; justify-content:center; width=100vh;">
+        <a href="{% url 'feed:addPost' %}" style="align-items:center; font-size:30px">Add post &rarr;</a>
+    </div>
+    <hr>
     {% for post in posts %}
         <br>
         {{ post.text }}
