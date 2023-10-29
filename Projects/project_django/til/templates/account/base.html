@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+    {% if messages %}
+        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+            <strong>Messages:</strong>
+            <ul>
+                {% for message in messages %}
+                    <li class="list-disc ml-6">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+{% endblock %}
